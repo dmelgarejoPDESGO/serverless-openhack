@@ -52,6 +52,7 @@ namespace BFYOC
                 return new BadRequestObjectResult("Rating must be a value between 0 and 5");
 
             var response = ratingService.Create(createRatingRequest);
+            
             await document.AddAsync(response);
             
             return new CreatedResult("ratings", response);
